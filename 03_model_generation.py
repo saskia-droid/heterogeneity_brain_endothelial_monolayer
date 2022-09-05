@@ -1,14 +1,14 @@
 import tensorflow as tf
 from functools import partial
 
-# Global Agv Pooling: features -2
+# Global Average Pooling: features -2
 
 def gen_model(n_classes, img_shape):
 
     # input
     img_input = tf.keras.Input(shape=img_shape)
 
-    # Conv layers
+    # convolutional layers
 
     myConv = partial(tf.keras.layers.Conv2D, activation=tf.keras.layers.LeakyReLU(alpha=0.1),
                      kernel_initializer='VarianceScaling', padding='same')
@@ -37,7 +37,7 @@ def gen_model(n_classes, img_shape):
 
     norm = tf.math.l2_normalize(conv_12, axis=-1)
 
-    # Global Average pooling
+    # Global Average Pooling
     gap_features = tf.keras.layers.GlobalAveragePooling2D()(norm)
 
     out = tf.keras.layers.Dense(n_classes, activation='softmax')(gap_features)
