@@ -29,7 +29,7 @@ if __name__ == '__main__':
 
     c0 = []
     c1 = []
-    c2 = [] 
+    c2 = []
     c3 = []
 
     for i in range(18):
@@ -101,3 +101,7 @@ if __name__ == '__main__':
     pickle.dump(c1, open(os.path.join(path_to_dataset, 'c1_preprocess.pckl'), 'wb'))
     pickle.dump(c2, open(os.path.join(path_to_dataset, 'c2_preprocess.pckl'), 'wb'))
     pickle.dump(c3, open(os.path.join(path_to_dataset, 'c3_preprocess.pckl'), 'wb'))
+
+    #pickle.dump(c1, open(os.path.join(path_to_dataset, 'c1_onlyResized32.pckl'), 'wb'))
+    #pickle.dump(c2, open(os.path.join(path_to_dataset, 'c2_onlyResized32.pckl'), 'wb'))
+    #pickle.dump(c3, open(os.path.join(path_to_dataset, 'c3_onlyResized32.pckl'), 'wb'))
